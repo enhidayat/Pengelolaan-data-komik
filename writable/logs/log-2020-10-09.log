@@ -1,0 +1,48 @@
+CRITICAL - 2020-10-09 20:55:14 --> Undefined property: App\Controllers\Komik::$komik
+#0 /home/n_hidayat/projek/ci/ci4APP/app/Controllers/Komik.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Komik->index()
+#2 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/n_hidayat/projek/ci/ci4APP/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/n_hidayat...')
+#6 {main}
+CRITICAL - 2020-10-09 21:10:51 --> Class 'App\Models\KomikModel' not found
+#0 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(890): App\Controllers\Komik->__construct()
+#1 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(399): CodeIgniter\CodeIgniter->createController()
+#2 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/n_hidayat/projek/ci/ci4APP/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/n_hidayat...')
+#5 {main}
+CRITICAL - 2020-10-09 21:52:34 --> Undefined property: CodeIgniter\View\View::$endSection
+#0 /home/n_hidayat/projek/ci/ci4APP/app/Views/komik/detail.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/View/View.php(246): include('/home/n_hidayat...')
+#2 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /home/n_hidayat/projek/ci/ci4APP/app/Controllers/Komik.php(37): view()
+#4 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Komik->detail()
+#5 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/n_hidayat/projek/ci/ci4APP/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/n_hidayat...')
+#9 {main}
+CRITICAL - 2020-10-09 22:48:40 --> Undefined index: penerbit
+#0 /home/n_hidayat/projek/ci/ci4APP/app/Views/komik/detail.php(17): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/View/View.php(246): include('/home/n_hidayat...')
+#2 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /home/n_hidayat/projek/ci/ci4APP/app/Controllers/Komik.php(37): view()
+#4 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Komik->detail()
+#5 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/n_hidayat/projek/ci/ci4APP/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/n_hidayat...')
+#9 {main}
+CRITICAL - 2020-10-09 22:49:19 --> Undefined index: penerbit
+#0 /home/n_hidayat/projek/ci/ci4APP/app/Views/komik/detail.php(17): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/View/View.php(246): include('/home/n_hidayat...')
+#2 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /home/n_hidayat/projek/ci/ci4APP/app/Controllers/Komik.php(37): view()
+#4 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Komik->detail()
+#5 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/n_hidayat/projek/ci/ci4APP/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /home/n_hidayat/projek/ci/ci4APP/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/n_hidayat...')
+#9 {main}

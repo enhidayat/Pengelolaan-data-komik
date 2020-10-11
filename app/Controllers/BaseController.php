@@ -44,5 +44,6 @@ class BaseController extends Controller
 		// $this->session = \Config\Services::session();
 		//sekali tulis disini bisa dipake semua controller
 		// $this->komikModel = new \App\Models\KomikModel();
+		session();
 	}
 }

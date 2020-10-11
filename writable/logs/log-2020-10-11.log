@@ -1,0 +1,10 @@
+CRITICAL - 2020-10-11 07:47:51 --> Call to undefined method CodeIgniter\Validation\Validation::listError()
+#0 /home/n_hidayat/projek/ci/Pengelolaan-data-komik/vendor/codeigniter4/framework/system/View/View.php(246): include()
+#1 /home/n_hidayat/projek/ci/Pengelolaan-data-komik/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#2 /home/n_hidayat/projek/ci/Pengelolaan-data-komik/app/Controllers/Komik.php(56): view()
+#3 /home/n_hidayat/projek/ci/Pengelolaan-data-komik/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Komik->create()
+#4 /home/n_hidayat/projek/ci/Pengelolaan-data-komik/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#5 /home/n_hidayat/projek/ci/Pengelolaan-data-komik/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/n_hidayat/projek/ci/Pengelolaan-data-komik/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/n_hidayat/projek/ci/Pengelolaan-data-komik/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/n_hidayat...')
+#8 {main}

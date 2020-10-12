@@ -32,9 +32,11 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
-$routes->get('/komik/create', 'Komik::create');
-$routes->get('/komik/(:segment)', 'Komik::detail/$1');
 
+$routes->get('/komik/create', 'Komik::create');
+$routes->get('/komik/edit/(:segment)', 'Komik::edit/$1');
+$routes->delete('/komik/(:num)', 'Komik::delete/$1'); //:ngambil nilai angka dari url
+$routes->get('/komik/(:any)', 'Komik::detail/$1'); // ngambil nilai apapun (kecuali karakter) pada url || segment mengambil semua yg terdapat pd url
 /**
  * --------------------------------------------------------------------
  * Additional Routing

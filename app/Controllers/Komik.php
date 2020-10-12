@@ -29,7 +29,6 @@ class Komik extends BaseController
 
     public function detail($slug)
     {
-        $komik = $this->komikModel->getKomik($slug);
         $data = [
             'title' =>  'Detail Kontak',
             'komik' =>  $this->komikModel->getKomik($slug)
@@ -102,6 +101,86 @@ class Komik extends BaseController
         ]);
         //membuat pesan berhasil .session sementara langsung ilang
         session()->setFlashdata('pesan', 'Data berhasil di tambahkan');
+        return redirect()->to('/komik/');
+    }
+
+    public function delete($id)
+    {
+        $this->komikModel->delete($id);
+        session()->setFlashdata('pesan', 'Data berhasil dihapus');
+
+        return redirect()->to('/komik/');
+    }
+
+    public function edit($slug)
+    {
+        // session(); = menerima inputan n validation dr save()
+        // session(); //agar tidak lupa ditaruh di Basecontroller biar otomatis load
+        $data = [
+            'title' => 'Form Ubah Data Komik',
+            'validation' => \Config\Services::validation(),
+            'komik' => $this->komikModel->getKomik($slug) //mengirim data komik yg akan diedit
+
+
+        ];
+        return view('komik/edit', $data);
+    }
+
+    public function update($id)
+    {
+        //cek judul
+        $komikLama = $this->komikModel->getKomik($this->request->getVar('slug'));
+        if ($komikLama['judul'] == $this->request->getVar('judul')) {
+            $rule_judul  =   'required';
+        } else {
+            $rule_judul = 'required|is_unique[komik.judul]';
+        }
+
+        //membuat validasi
+        if (!$this->validate([
+            // 'judul'     => 'required|is_unique[komik.judul]',
+            'judul'     => [
+                'rules' => $rule_judul,
+                'errors' => [
+                    'required'  => '{field} komik harus diisi',
+                    'is_unique' => '{field} komik sudah terdaftar'
+                ]
+
+            ],
+
+            'penulis'   => 'required',
+            'penerbit'  =>  'required',
+            'sampul'    =>  'required'
+        ])) {
+            //membuat pesan kesalahan
+            $validation = \Config\Services::validation();
+            $data['validation'] = $validation;
+            // return view('/komik/create', $data);
+
+            //cara 1 
+            // withInput = utk mengirimkan semua input ke create() dan jg memiliki old method(agar form tidak otomatis terhapus jk salah inputt ) dan akan disimpan pd session
+            // with = akan mengirimkan validasi ke  create()
+            return redirect()->to('/komik/edit/' . $this->request->getVar('slug'))->withInput()->with('validation', $validation);
+
+            //cara 2 
+            // $data['validation'] = $validation;
+            // return view('/komik/create', $data);
+        }
+
+
+
+        //membua String pada url berdasarkan field judul jk ada spasi diganti dg tanda minus dan semua karakter jd lowercase
+        $slug   = url_title($this->request->getVar('judul'), '-', true);
+        $this->komikModel->save([
+            'id'    =>  $id,
+            'judul' => $this->request->getVar('judul'),
+            'slug'  => $slug, //nama lain judul yg unik
+            'penulis' => $this->request->getVar('penulis'),
+            'penerbit' => $this->request->getVar('penerbit'),
+            'sampul' => $this->request->getVar('sampul'),
+        ]);
+        //membuat pesan berhasil .session sementara langsung ilang
+        session()->setFlashdata('pesan', 'Data berhasil diubah');
         return redirect()->to('/komik/');
     }
 }
